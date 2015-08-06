@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d99e86e-a4cf-4da6-a1ac-ae387869beb2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/POI/._AppDelegate.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/POI/Controllers/._PointOfViewShortDetailCell.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/POI/Helpers/._CustomSegue.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/POI/Helpers/._DefaultFonts.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/POI/Helpers/._SessionVars.swift" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/POI/Helpers/CustomSegue.swift" afterPath="$PROJECT_DIR$/POI/Helpers/Navigation.swift" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/POI/Helpers/DefaultFonts.swift" afterPath="$PROJECT_DIR$/POI/Helpers/UIHelpers.swift" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/POI/Helpers/SessionVars.swift" afterPath="$PROJECT_DIR$/POI/Helpers/UserPreferences.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/POI/AppDelegate.swift" afterPath="$PROJECT_DIR$/POI/AppDelegate.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/POI/Controllers/DetailsViewController.swift" afterPath="$PROJECT_DIR$/POI/Controllers/DetailsViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/POI/Helpers/Extensions.swift" afterPath="$PROJECT_DIR$/POI/Helpers/Extensions.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/POI/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/POI/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/POI/Controllers/PointOfViewShortDetailCell.swift" afterPath="$PROJECT_DIR$/POI/Controllers/PointOfViewShortDetailCell.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/POI/Controllers/ViewController.swift" afterPath="$PROJECT_DIR$/POI/Controllers/ViewController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/POI.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/POI.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="POI.iws" />
     <ignored path=".idea/workspace.xml" />

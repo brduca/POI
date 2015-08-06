@@ -40,6 +40,8 @@
 		08ED0B9E1B736C4A008DDA51 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B9A1B736C4A008DDA51 /* HttpHelper.swift */; };
 		08ED0B9F1B736C4A008DDA51 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B9B1B736C4A008DDA51 /* UserPreferences.swift */; };
 		08ED0BA11B736C74008DDA51 /* UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0BA01B736C74008DDA51 /* UIHelpers.swift */; };
+		08ED0BA31B738849008DDA51 /* NoResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08ED0BA21B738849008DDA51 /* NoResults.xib */; };
+		08ED0BA51B739D66008DDA51 /* favorite_inactive_navigation_btn_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 08ED0BA41B739D66008DDA51 /* favorite_inactive_navigation_btn_image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		08ED0B9A1B736C4A008DDA51 /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpHelper.swift; path = Helpers/HttpHelper.swift; sourceTree = "<group>"; };
 		08ED0B9B1B736C4A008DDA51 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPreferences.swift; path = Helpers/UserPreferences.swift; sourceTree = "<group>"; };
 		08ED0BA01B736C74008DDA51 /* UIHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIHelpers.swift; path = Helpers/UIHelpers.swift; sourceTree = "<group>"; };
+		08ED0BA21B738849008DDA51 /* NoResults.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoResults.xib; sourceTree = "<group>"; };
+		08ED0BA41B739D66008DDA51 /* favorite_inactive_navigation_btn_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite_inactive_navigation_btn_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				08DA94141B6B8C2B00AD69F1 /* Images.xcassets */,
 				08DA94161B6B8C2B00AD69F1 /* LaunchScreen.xib */,
 				08DA940B1B6B8C2B00AD69F1 /* Supporting Files */,
+				08ED0BA21B738849008DDA51 /* NoResults.xib */,
 			);
 			path = POI;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				08ED0B6C1B736B15008DDA51 /* 1438698658_aiga_mail.png */,
 				08ED0B6D1B736B15008DDA51 /* 1438698736_telepnone.png */,
 				08ED0B6E1B736B15008DDA51 /* 1438698833_ic_directions_48px.png */,
+				08ED0BA41B739D66008DDA51 /* favorite_inactive_navigation_btn_image.png */,
 				08ED0B6F1B736B15008DDA51 /* 1438698893_ic_directions_train_48px.png */,
 				08ED0B701B736B15008DDA51 /* 1438711991_circle_info_more-information_detail_.png */,
 				08ED0B711B736B15008DDA51 /* 1438712013_common_email_envelope_mail_.png */,
@@ -334,6 +340,8 @@
 				08ED0B801B736B15008DDA51 /* 1438712013_common_email_envelope_mail_.png in Resources */,
 				08ED0B8D1B736B22008DDA51 /* LibreBaskerville-Regular.otf in Resources */,
 				08ED0B7A1B736B15008DDA51 /* 1438643027_common_star_favorite_bookmark.png in Resources */,
+				08ED0BA31B738849008DDA51 /* NoResults.xib in Resources */,
+				08ED0BA51B739D66008DDA51 /* favorite_inactive_navigation_btn_image.png in Resources */,
 				08DA94131B6B8C2B00AD69F1 /* Main.storyboard in Resources */,
 				08ED0B851B736B15008DDA51 /* favorite_active_navigation_btn_image.png in Resources */,
 				08ED0B841B736B15008DDA51 /* back_navigation_item_image.png in Resources */,

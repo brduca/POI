@@ -315,7 +315,11 @@
                                                 <segue destination="vXZ-lx-hvc" kind="custom" identifier="back" customClass="DismissSegue" customModule="POI" customModuleProvider="target" id="4ye-r9-d2D"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="favorite_active_navigation_btn_image.png" id="BQD-n3-FeD"/>
+                                        <barButtonItem key="rightBarButtonItem" image="favorite_inactive_navigation_btn_image.png" id="BQD-n3-FeD">
+                                            <connections>
+                                                <action selector="toogleFavoriteBtnClickEventHandler:" destination="924-rJ-QhQ" id="Ecc-Bi-KMh"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -421,6 +425,7 @@
                         <outlet property="navigationBar" destination="na3-jo-neH" id="1CZ-QK-HSG"/>
                         <outlet property="statusBarWrapperView" destination="zBJ-Po-7Ky" id="PxS-gT-0RO"/>
                         <outlet property="titleLabel" destination="lmz-U2-gpn" id="Dxj-fQ-LDF"/>
+                        <outlet property="toogleFavoriteBtn" destination="BQD-n3-FeD" id="wm8-BB-vMq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2C-uZ-1cl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -436,6 +441,6 @@
         <image name="1438803194_location-24.png" width="128" height="128"/>
         <image name="1438832974_10.png" width="128" height="128"/>
         <image name="back_navigation_item_image.png" width="22" height="22"/>
-        <image name="favorite_active_navigation_btn_image.png" width="22" height="22"/>
+        <image name="favorite_inactive_navigation_btn_image.png" width="22" height="22"/>
     </resources>
 </document>

@@ -72,13 +72,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.reloadData()
     }
     
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText != "" {
+            
+            return
+            
+        } else {
+            
+            self.view.endEditing(true)
+        }
+        
+        search()
+    }
+    
+    func search(){
+        
+        isFiltering = true
+        filteredResults = results.filter{ (elem: PointOfInterestShortDetailsDto) -> Bool in return  (elem.Title as NSString).containsString(self.searchBar.text) }
+        tableView.reloadData()
+    }
+    
     // Search bar funcs
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        isFiltering = true
-        filteredResults = results.filter{ (elem: PointOfInterestShortDetailsDto) -> Bool in return  (elem.Title as NSString).containsString(searchBar.text) }
         self.view.endEditing(true)
-        tableView.reloadData()
+        search()
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -92,12 +111,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBAction func filterByLocationBtnClickEventHandler(sender: AnyObject) {
         
-        filteredResults = results.filter{(pointOfInterest: PointOfInterestShortDetailsDto) -> Bool in
+        filteredResults = results.sorted {
         
-            let destination = pointOfInterest.Geocoordinates.toCLLocation()
-            let distance = self.here! |=> destination
-
-            return true
+            (self.here! |=>  $0.Geocoordinates.toCLLocation()) < (self.here! |=>  $1.Geocoordinates.toCLLocation())
         }
         
         isFiltering = true
@@ -144,8 +160,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         cell.visitedImage.alpha = ManagePreferences.isVisited(pointOfInterest.Id) ? 0.5 : 0
-        cell.favoriteImage.alpha = ManagePreferences.isFavorite(pointOfInterest.Id)
- ? 0.5 : 0
+        cell.favoriteImage.alpha = ManagePreferences.isFavorite(pointOfInterest.Id) ? 0.5 : 0
         
         cell.setupUIDefaults()
         
@@ -209,7 +224,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return isFiltering ? filteredResults.count : results.count
+        var dataSource = isFiltering ? filteredResults : results
+        
+        if dataSource.count == 0 {
+            
+            var noResultsView = NSBundle.mainBundle().loadNibNamed("NoResults", owner: self, options: nil)
+            tableView.backgroundView = noResultsView[0] as? UIView
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            
+            return 0
+        }
+        else {
+            
+            self.tableView.backgroundView = nil
+        }
+
+        
+        return dataSource.count
     }
     
     // Location funcs

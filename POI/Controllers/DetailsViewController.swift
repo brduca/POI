@@ -20,6 +20,9 @@ class DetailsViewController: UIViewController, MFMailComposeViewControllerDelega
     // View
     @IBOutlet weak var statusBarWrapperView: UIView!
     
+    // Btn
+    @IBOutlet weak var toogleFavoriteBtn: UIBarButtonItem!
+    
     var details : PointOfInterestResponse? = nil
     let span = MKCoordinateSpanMake(0.005, 0.005)
     
@@ -54,6 +57,32 @@ class DetailsViewController: UIViewController, MFMailComposeViewControllerDelega
         }
     }
 
+    @IBAction func toogleFavoriteBtnClickEventHandler(sender: AnyObject) {
+      
+        let isFavorite = ManagePreferences.isFavorite(details!.Id)
+        
+        if isFavorite {
+            
+            ManagePreferences.removeFromFavorite(details!.Id)
+        
+        } else {
+        
+            ManagePreferences.addToFavorite(details!.Id)
+        }
+        
+        toogleFavoriteBtn(!isFavorite)
+    }
+    
+    func toogleFavoriteBtn(isFavorite: Bool){
+    
+        if isFavorite {
+            
+            toogleFavoriteBtn.image = UIImage(named: "favorite_active_navigation_btn_image.png")
+            return
+        }
+        
+        toogleFavoriteBtn.image = UIImage(named: "favorite_inactive_navigation_btn_image.png")
+    }
     
     func setupUIDefaults(){
         
@@ -85,6 +114,9 @@ class DetailsViewController: UIViewController, MFMailComposeViewControllerDelega
         descriptionTextView.scrollRangeToVisible(NSRange(location:0, length:0))
         
         directionsInfoLabel.text = details!.Transport
+        
+        let isFavorite = ManagePreferences.isFavorite(details!.Id)
+        toogleFavoriteBtn(isFavorite)
         
         buildMap(details!.Geocoordinates.toCLLocationCoordinate2D())
     }
