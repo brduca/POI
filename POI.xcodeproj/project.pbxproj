@@ -35,11 +35,11 @@
 		08ED0B931B736BDC008DDA51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B901B736BDC008DDA51 /* ViewController.swift */; };
 		08ED0B961B736BF3008DDA51 /* PointOfInterestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B941B736BF3008DDA51 /* PointOfInterestResponse.swift */; };
 		08ED0B971B736BF3008DDA51 /* PointsOfInterestListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B951B736BF3008DDA51 /* PointsOfInterestListResponse.swift */; };
-		08ED0B9C1B736C4A008DDA51 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B981B736C4A008DDA51 /* CustomSegue.swift */; };
+		08ED0B9C1B736C4A008DDA51 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B981B736C4A008DDA51 /* Navigation.swift */; };
 		08ED0B9D1B736C4A008DDA51 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B991B736C4A008DDA51 /* Extensions.swift */; };
 		08ED0B9E1B736C4A008DDA51 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B9A1B736C4A008DDA51 /* HttpHelper.swift */; };
-		08ED0B9F1B736C4A008DDA51 /* SessionVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B9B1B736C4A008DDA51 /* SessionVars.swift */; };
-		08ED0BA11B736C74008DDA51 /* DefaultFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0BA01B736C74008DDA51 /* DefaultFonts.swift */; };
+		08ED0B9F1B736C4A008DDA51 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0B9B1B736C4A008DDA51 /* UserPreferences.swift */; };
+		08ED0BA11B736C74008DDA51 /* UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED0BA01B736C74008DDA51 /* UIHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,11 +85,11 @@
 		08ED0B901B736BDC008DDA51 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		08ED0B941B736BF3008DDA51 /* PointOfInterestResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointOfInterestResponse.swift; path = Service/Models/PointOfInterestResponse.swift; sourceTree = "<group>"; };
 		08ED0B951B736BF3008DDA51 /* PointsOfInterestListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointsOfInterestListResponse.swift; path = Service/Models/PointsOfInterestListResponse.swift; sourceTree = "<group>"; };
-		08ED0B981B736C4A008DDA51 /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegue.swift; path = Helpers/CustomSegue.swift; sourceTree = "<group>"; };
+		08ED0B981B736C4A008DDA51 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Navigation.swift; path = Helpers/Navigation.swift; sourceTree = "<group>"; };
 		08ED0B991B736C4A008DDA51 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Helpers/Extensions.swift; sourceTree = "<group>"; };
 		08ED0B9A1B736C4A008DDA51 /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpHelper.swift; path = Helpers/HttpHelper.swift; sourceTree = "<group>"; };
-		08ED0B9B1B736C4A008DDA51 /* SessionVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionVars.swift; path = Helpers/SessionVars.swift; sourceTree = "<group>"; };
-		08ED0BA01B736C74008DDA51 /* DefaultFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultFonts.swift; path = Helpers/DefaultFonts.swift; sourceTree = "<group>"; };
+		08ED0B9B1B736C4A008DDA51 /* UserPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserPreferences.swift; path = Helpers/UserPreferences.swift; sourceTree = "<group>"; };
+		08ED0BA01B736C74008DDA51 /* UIHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIHelpers.swift; path = Helpers/UIHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,11 +191,11 @@
 		08F005031B6F7AC800E61F21 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				08ED0BA01B736C74008DDA51 /* DefaultFonts.swift */,
-				08ED0B981B736C4A008DDA51 /* CustomSegue.swift */,
+				08ED0BA01B736C74008DDA51 /* UIHelpers.swift */,
+				08ED0B981B736C4A008DDA51 /* Navigation.swift */,
 				08ED0B991B736C4A008DDA51 /* Extensions.swift */,
 				08ED0B9A1B736C4A008DDA51 /* HttpHelper.swift */,
-				08ED0B9B1B736C4A008DDA51 /* SessionVars.swift */,
+				08ED0B9B1B736C4A008DDA51 /* UserPreferences.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -363,11 +363,11 @@
 				08ED0B931B736BDC008DDA51 /* ViewController.swift in Sources */,
 				08ED0B9E1B736C4A008DDA51 /* HttpHelper.swift in Sources */,
 				08ED0B921B736BDC008DDA51 /* PointOfViewShortDetailCell.swift in Sources */,
-				08ED0B9F1B736C4A008DDA51 /* SessionVars.swift in Sources */,
+				08ED0B9F1B736C4A008DDA51 /* UserPreferences.swift in Sources */,
 				08ED0B9D1B736C4A008DDA51 /* Extensions.swift in Sources */,
-				08ED0BA11B736C74008DDA51 /* DefaultFonts.swift in Sources */,
+				08ED0BA11B736C74008DDA51 /* UIHelpers.swift in Sources */,
 				08ED0B971B736BF3008DDA51 /* PointsOfInterestListResponse.swift in Sources */,
-				08ED0B9C1B736C4A008DDA51 /* CustomSegue.swift in Sources */,
+				08ED0B9C1B736C4A008DDA51 /* Navigation.swift in Sources */,
 				08DA940E1B6B8C2B00AD69F1 /* AppDelegate.swift in Sources */,
 				08ED0B961B736BF3008DDA51 /* PointOfInterestResponse.swift in Sources */,
 			);

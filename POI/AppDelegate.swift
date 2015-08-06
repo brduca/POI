@@ -15,8 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
+        var barButtonAppearace = UIBarButtonItem.appearance()
+        
+        barButtonAppearace.setTitleTextAttributes([NSFontAttributeName: FontsLibrary.set(FontWeight.regular, size: 16)], forState: UIControlState.Normal)
+        
+        barButtonAppearace.tintColor = UIColor.whiteColor()
+
         return true
     }
 

@@ -8,12 +8,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var filterView: UIView!
 
+    // Btns
+    
+    @IBOutlet weak var nearMeBtn: UIButton!
+    @IBOutlet weak var favoritsBtn: UIButton!
+    @IBOutlet weak var visitedBtn: UIButton!
+    
     var results = [PointOfInterestShortDetailsDto]()
     var filteredResults = [PointOfInterestShortDetailsDto]()
     var isFiltering = false
     var here: CLLocation? = nil
-    
-    let darkRed =  UIColor(red: 112/255, green: 48/255, blue: 48/255, alpha: 1)
     
     let locationManager = CLLocationManager()
     
@@ -27,10 +31,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func setupUIDefaults(){
     
-        self.view.backgroundColor = darkRed
-        searchBar.barTintColor = darkRed
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        let btnsFonts = FontsLibrary.set(FontWeight.regular, size: 12)
+        self.view.backgroundColor = ColorsLibrary.darkRed
+        searchBar.barTintColor = ColorsLibrary.darkRed
+
+        nearMeBtn.titleLabel?.font = btnsFonts
+        favoritsBtn.titleLabel?.font = btnsFonts
+        visitedBtn.titleLabel?.font = btnsFonts
         
+        nearMeBtn.setTitleColor(ColorsLibrary.darkGray, forState: UIControlState.Normal)
+        favoritsBtn.setTitleColor(ColorsLibrary.darkGray, forState: UIControlState.Normal)
+        visitedBtn.setTitleColor(ColorsLibrary.darkGray, forState: UIControlState.Normal)
+        
+        
+        let attributesDictionary = [NSForegroundColorAttributeName: ColorsLibrary.darkGray]
+        var textFieldInsideSearchBar = searchBar.valueForKey("searchField") as? UITextField
+        
+        textFieldInsideSearchBar!.font = FontsLibrary.set(FontWeight.regular, size: 14)
+    
+        textFieldInsideSearchBar!.attributedPlaceholder = NSAttributedString(string: "Barcelona point of interest finder" , attributes: attributesDictionary)
+
     }
     
     func bindDelegates(){
@@ -155,7 +175,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             
             tableView.setEditing(false, animated: true)
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         })
 
         var addToFavorites = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: favoriteTitle, handler: {
@@ -172,11 +192,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             
             tableView.setEditing(false, animated: true)
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         })
 
-        markAsVisited.backgroundColor = UIColor.blueColor()
-        addToFavorites.backgroundColor = UIColor.brownColor()
+        markAsVisited.backgroundColor = ColorsLibrary.darkRed
+        addToFavorites.backgroundColor = ColorsLibrary.darkGray
         
         return [addToFavorites, markAsVisited]
     }

@@ -1,7 +1,8 @@
 import UIKit
 import MapKit
+import MessageUI
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     // Labels
     @IBOutlet weak var titleLabel: UILabel!
@@ -18,10 +19,6 @@ class DetailsViewController: UIViewController {
     
     // View
     @IBOutlet weak var statusBarWrapperView: UIView!
-    
-    
-    let darkRed =  UIColor(red: 112/255, green: 48/255, blue: 48/255, alpha: 1)
-    let darkGray =  UIColor(red: 47/255, green: 52/255, blue: 59/255, alpha: 1)
     
     var details : PointOfInterestResponse? = nil
     let span = MKCoordinateSpanMake(0.005, 0.005)
@@ -60,45 +57,58 @@ class DetailsViewController: UIViewController {
     
     func setupUIDefaults(){
         
-        navigationBar.tintColor = darkRed
-        navigationBar.barTintColor = darkRed
+        navigationBar.tintColor = ColorsLibrary.darkRed
+        navigationBar.barTintColor = ColorsLibrary.darkRed
         
-        statusBarWrapperView.backgroundColor = darkRed
+        statusBarWrapperView.backgroundColor = ColorsLibrary.darkRed
         
-        navigationBar.titleTextAttributes = [NSFontAttributeName: DefaultFonts.set(FontWeight.regular, size: 16),
+        navigationBar.titleTextAttributes = [NSFontAttributeName: FontsLibrary.set(FontWeight.regular, size: 16),
             NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        directionsInfoLabel.font = DefaultFonts.set(FontWeight.regular, size: 12)
+        directionsInfoLabel.font = FontsLibrary.set(FontWeight.regular, size: 12)
         directionsInfoLabel.alpha = 0.6
         
-        titleLabel.font = DefaultFonts.set(FontWeight.bold, size: 18)
-        descriptionTextView.font = DefaultFonts.set(FontWeight.regular, size: 16)
-        descriptionTextView.textColor = darkGray
+        titleLabel.font = FontsLibrary.set(FontWeight.bold, size: 18)
+        descriptionTextView.font = FontsLibrary.set(FontWeight.regular, size: 16)
+        descriptionTextView.textColor = ColorsLibrary.darkGray
         descriptionTextView.setContentOffset(CGPointZero, animated: false)
         descriptionTextView.backgroundColor = UIColor.clearColor()
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        
-        var barButtonAppearace = UIBarButtonItem.appearance()
-        
-        barButtonAppearace.setTitleTextAttributes([NSFontAttributeName: DefaultFonts.set(FontWeight.regular, size: 16)], forState: UIControlState.Normal)
-        
-        barButtonAppearace.tintColor = UIColor.whiteColor()
-
     }
     
     func fetchData(){
-    
+        
         details = HTTPHelper.getDetails( SessionVars.detailId!)
-       
-       titleLabel.text = details!.Title
+        
+        titleLabel.text = details!.Title
         
         descriptionTextView.text = details!.Description
         descriptionTextView.scrollRangeToVisible(NSRange(location:0, length:0))
-    
+        
         directionsInfoLabel.text = details!.Transport
         
         buildMap(details!.Geocoordinates.toCLLocationCoordinate2D())
     }
+    
+    @IBAction func emailBtnClickEventHandler(sender: AnyObject) {
+
+        var picker = MFMailComposeViewController()
+        picker.mailComposeDelegate = self
+        picker.setSubject("Need more info")
+        picker.setToRecipients([details!.Email!])
+        picker.setMessageBody("", isHTML: true)
+        
+        presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func telephoneBtnClickEventHandler(sender: AnyObject) {
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://9809088798")!)
+    }
+    
     
     @IBAction func launchMapsBtnClickEventHandler(sender: AnyObject) {
         
@@ -120,6 +130,5 @@ class DetailsViewController: UIViewController {
         annotation.title = details!.Title
         annotation.subtitle = details!.Address
         mapView.addAnnotation(annotation)
-     //   mapView.selectAnnotation(annotation, animated: true)
     }
 }

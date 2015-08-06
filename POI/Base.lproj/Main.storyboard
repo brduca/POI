@@ -129,7 +129,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RD-VS-KMh">
-                                        <rect key="frame" x="252" y="12" width="20" height="20"/>
+                                        <rect key="frame" x="260" y="12" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="3nL-N8-Lvh"/>
                                             <constraint firstAttribute="height" constant="20" id="ViH-TX-BOY"/>
@@ -148,7 +148,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l32-MC-fd6">
-                                        <rect key="frame" x="504" y="13" width="20" height="20"/>
+                                        <rect key="frame" x="511" y="13" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="Or0-Zd-WUM"/>
                                             <constraint firstAttribute="height" constant="20" id="Vbt-7M-n39"/>
@@ -160,39 +160,48 @@
                                             <action selector="filterByVisitedBtnClickEventHandler:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MlL-BG-Sov"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQA-7z-dSN">
-                                        <rect key="frame" x="33" y="13" width="66" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorits" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhz-us-9d4">
-                                        <rect key="frame" x="280" y="12" width="61" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neE-Dd-Utl">
-                                        <rect key="frame" x="534" y="12" width="56" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgI-ZX-I1W">
+                                        <rect key="frame" x="534" y="8" width="46" height="30"/>
+                                        <state key="normal" title="Visited">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filterByVisitedBtnClickEventHandler:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XHw-Ff-tg0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-2K-TkS">
+                                        <rect key="frame" x="33" y="8" width="59" height="30"/>
+                                        <state key="normal" title="Near me">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filterByLocationBtnClickEventHandler:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4VS-01-fhu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUh-8a-QwD">
+                                        <rect key="frame" x="283" y="7" width="55" height="30"/>
+                                        <state key="normal" title="Favorits">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filterByFavoritesBtnClickEventHandler:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xOx-T2-O6Q"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.87450980392156863" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="neE-Dd-Utl" secondAttribute="trailing" constant="10" id="Bqh-vc-Fsw"/>
-                                    <constraint firstAttribute="centerY" secondItem="vhz-us-9d4" secondAttribute="centerY" id="M7z-GP-Hdx"/>
-                                    <constraint firstAttribute="centerY" secondItem="neE-Dd-Utl" secondAttribute="centerY" id="Qov-ss-v0R"/>
+                                    <constraint firstAttribute="centerY" secondItem="nUh-8a-QwD" secondAttribute="centerY" id="8iD-GV-raL"/>
+                                    <constraint firstAttribute="trailing" secondItem="wgI-ZX-I1W" secondAttribute="trailing" constant="20" id="GWh-kg-LeX"/>
+                                    <constraint firstItem="Sdb-2K-TkS" firstAttribute="leading" secondItem="hhH-DW-MYY" secondAttribute="trailing" constant="3" id="HlM-Hg-3YA"/>
+                                    <constraint firstItem="wgI-ZX-I1W" firstAttribute="leading" secondItem="l32-MC-fd6" secondAttribute="trailing" constant="3" id="KKc-f8-Gft"/>
+                                    <constraint firstAttribute="centerY" secondItem="wgI-ZX-I1W" secondAttribute="centerY" id="SQi-Na-xAS"/>
                                     <constraint firstAttribute="centerY" secondItem="l32-MC-fd6" secondAttribute="centerY" id="Tcg-rh-15K"/>
-                                    <constraint firstItem="xQA-7z-dSN" firstAttribute="leading" secondItem="hhH-DW-MYY" secondAttribute="trailing" constant="3" id="b7p-1B-4HO"/>
-                                    <constraint firstItem="neE-Dd-Utl" firstAttribute="leading" secondItem="l32-MC-fd6" secondAttribute="trailing" constant="10" id="bmD-vQ-yJs"/>
+                                    <constraint firstAttribute="centerX" secondItem="nUh-8a-QwD" secondAttribute="centerX" constant="-10" id="V5h-FW-UrD"/>
+                                    <constraint firstItem="nUh-8a-QwD" firstAttribute="leading" secondItem="1RD-VS-KMh" secondAttribute="trailing" constant="3" id="b6m-vP-toj"/>
                                     <constraint firstAttribute="centerY" secondItem="hhH-DW-MYY" secondAttribute="centerY" id="c8n-np-mlp"/>
-                                    <constraint firstAttribute="centerX" secondItem="vhz-us-9d4" secondAttribute="centerX" constant="-10" id="eTm-Gf-Uh9"/>
-                                    <constraint firstItem="hhH-DW-MYY" firstAttribute="centerY" secondItem="xQA-7z-dSN" secondAttribute="centerY" id="gOe-5j-AgS"/>
                                     <constraint firstItem="hhH-DW-MYY" firstAttribute="leading" secondItem="rA7-UO-rbm" secondAttribute="leading" constant="10" id="ppj-8Y-Y0p"/>
                                     <constraint firstAttribute="height" constant="45" id="qUN-K7-mLE"/>
-                                    <constraint firstItem="vhz-us-9d4" firstAttribute="leading" secondItem="1RD-VS-KMh" secondAttribute="trailing" constant="8" id="uTZ-x0-Xx3"/>
+                                    <constraint firstAttribute="centerY" secondItem="Sdb-2K-TkS" secondAttribute="centerY" id="w1s-fh-Vs6"/>
                                     <constraint firstAttribute="centerY" secondItem="1RD-VS-KMh" secondAttribute="centerY" id="wPd-lX-p8J"/>
                                 </constraints>
                             </view>
@@ -212,9 +221,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="favoritsBtn" destination="nUh-8a-QwD" id="h7k-U2-UTq"/>
                         <outlet property="filterView" destination="rA7-UO-rbm" id="HMR-Xt-eNT"/>
+                        <outlet property="nearMeBtn" destination="Sdb-2K-TkS" id="ROx-BD-gi1"/>
                         <outlet property="searchBar" destination="M2Q-RM-Yr7" id="0SH-1J-KXz"/>
                         <outlet property="tableView" destination="Gf3-dL-iD0" id="G8u-Zf-jYP"/>
+                        <outlet property="visitedBtn" destination="wgI-ZX-I1W" id="Xxi-kT-FMj"/>
                         <segue destination="924-rJ-QhQ" kind="custom" identifier="goToDetailsSegue" customClass="CustomSegue" customModule="POI" customModuleProvider="target" id="Tgs-Sh-dvx"/>
                     </connections>
                 </viewController>
@@ -252,6 +264,9 @@
                                         <state key="normal" image="1438698833_ic_directions_48px.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="launchMapsBtnClickEventHandler:" destination="924-rJ-QhQ" eventType="touchUpInside" id="4nf-am-S36"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACk-na-GfX">
                                         <rect key="frame" x="283" y="16" width="35" height="20"/>
@@ -262,6 +277,9 @@
                                         <state key="normal" image="1438712013_common_email_envelope_mail_.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="emailBtnClickEventHandler:" destination="924-rJ-QhQ" eventType="touchUpInside" id="Yhr-zr-2b3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNH-eZ-iQ1">
                                         <rect key="frame" x="398" y="8" width="35" height="35"/>
@@ -272,6 +290,9 @@
                                         <state key="normal" image="1438832974_10.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="telephoneBtnClickEventHandler:" destination="924-rJ-QhQ" eventType="touchUpInside" id="Z9X-NB-aRy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8901960784313725" green="0.89803921568627454" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,17 +10,15 @@ class PointOfViewShortDetailCell: UITableViewCell {
     @IBOutlet weak var favoriteImage: UIImageView!
     @IBOutlet weak var visitedImage: UIImageView!
     
-    let darkGray =  UIColor(red: 60/255, green: 60/255, blue: 60/255, alpha: 1)
-    let lightGray =  UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-    
+    // Setup initial cell styles
     func setupUIDefaults(){
         
-        self.titleLabel.font = DefaultFonts.set(FontWeight.bold, size: 18)
-        self.distanceInfoLabel.font = DefaultFonts.set(FontWeight.regular, size: 12)
-        self.distanceLabel.font = DefaultFonts.set(FontWeight.regular, size: 12)
+        self.titleLabel.font = FontsLibrary.set(FontWeight.bold, size: 18)
+        self.distanceInfoLabel.font = FontsLibrary.set(FontWeight.regular, size: 12)
+        self.distanceLabel.font = FontsLibrary.set(FontWeight.regular, size: 12)
 
-        self.titleLabel.textColor = darkGray
-        self.distanceInfoLabel.textColor = lightGray
-        self.distanceLabel.textColor = lightGray
+        self.titleLabel.textColor = ColorsLibrary.darkGray
+        self.distanceInfoLabel.textColor = ColorsLibrary.lightGray
+        self.distanceLabel.textColor = ColorsLibrary.lightGray
     }
 }

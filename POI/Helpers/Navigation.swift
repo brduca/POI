@@ -1,6 +1,8 @@
 import UIKit
 import Foundation
 
+
+// Segue to detail view
 class CustomSegue: UIStoryboardSegue {
     
     override func perform() {
@@ -31,6 +33,7 @@ class CustomSegue: UIStoryboardSegue {
     }
 }
 
+// Dismiss segue to keep listing position 
 class DismissSegue: UIStoryboardSegue {
     
     override func perform(){
