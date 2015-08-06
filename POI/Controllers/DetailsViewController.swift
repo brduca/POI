@@ -138,9 +138,8 @@ class DetailsViewController: UIViewController, MFMailComposeViewControllerDelega
     
     @IBAction func telephoneBtnClickEventHandler(sender: AnyObject) {
         
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://9809088798")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(details!.Phone)")!)
     }
-    
     
     @IBAction func launchMapsBtnClickEventHandler(sender: AnyObject) {
         

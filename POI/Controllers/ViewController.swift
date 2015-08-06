@@ -50,7 +50,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         textFieldInsideSearchBar!.font = FontsLibrary.set(FontWeight.regular, size: 14)
     
         textFieldInsideSearchBar!.attributedPlaceholder = NSAttributedString(string: "Barcelona point of interest finder" , attributes: attributesDictionary)
-
     }
     
     func bindDelegates(){
@@ -74,30 +73,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if searchText != "" {
+        if searchText == "" {
             
-            return
-            
-        } else {
-            
-            self.view.endEditing(true)
+            // tiny hack to force keyboard to disapear when clear is tapped
+            let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("disapearKeyboard"), userInfo: nil, repeats: false)
         }
-        
-        search()
     }
     
-    func search(){
-        
-        isFiltering = true
-        filteredResults = results.filter{ (elem: PointOfInterestShortDetailsDto) -> Bool in return  (elem.Title as NSString).containsString(self.searchBar.text) }
+    func disapearKeyboard() {
+    
+        tableView.resignFirstResponder()
+        isFiltering = false
         tableView.reloadData()
+        self.view.endEditing(true)
     }
     
     // Search bar funcs
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        
+
+        isFiltering = true
         self.view.endEditing(true)
-        search()
+        filteredResults = results.filter{ (elem: PointOfInterestShortDetailsDto) -> Bool in return  (elem.Title as NSString).containsString(self.searchBar.text) }
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -163,6 +160,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.favoriteImage.alpha = ManagePreferences.isFavorite(pointOfInterest.Id) ? 0.5 : 0
         
         cell.setupUIDefaults()
+        
+        // hack to prevent separator to disappear
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         
         return cell
     }
