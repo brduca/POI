@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func disapearKeyboard() {
     
-        tableView.resignFirstResponder()
+        searchBar.resignFirstResponder()
         isFiltering = false
         tableView.reloadData()
         self.view.endEditing(true)
@@ -93,7 +93,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         isFiltering = true
         self.view.endEditing(true)
-        filteredResults = results.filter{ (elem: PointOfInterestShortDetailsDto) -> Bool in return  (elem.Title as NSString).containsString(self.searchBar.text) }
+        filteredResults = results.filter{ (elem: PointOfInterestShortDetailsDto) -> Bool in
+            
+            // For sake of simpilicity convert both to lower case to compare
+            let lowerCaseTitle = elem.Title.lowercaseString as NSString
+            return lowerCaseTitle.containsString(self.searchBar.text.lowercaseString)
+        }
         tableView.reloadData()
     }
     
@@ -248,6 +253,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
         here = manager.location
+        tableView.reloadData()
+        
+        // only do this once, when the app is loaded
+        manager.stopUpdatingLocation()
     }
     
     override func didReceiveMemoryWarning() {
